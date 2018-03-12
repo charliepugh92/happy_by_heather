@@ -1,0 +1,11 @@
+!!! HTML
+%html
+  %head
+    %title HappyByHeather
+    = csrf_meta_tags
+
+    = stylesheet_link_tag 'default', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'default', 'data-turbolinks-track': 'reload'
+
+  %body
+    = yield
