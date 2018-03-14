@@ -87,8 +87,12 @@ p {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #888888;
-  text-align: center;
-  color: #000000;
-  padding: 5px 0 5px 0;
 }
+
+  .footer .footer-copyright {
+    width: 100%;
+    background-color: #888888;
+    text-align: center;
+    color: #000000;
+    padding: 5px 0 5px 0;
+  }

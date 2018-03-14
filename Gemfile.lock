@@ -58,8 +58,11 @@ GEM
     crass (1.0.3)
     erubi (1.7.1)
     execjs (2.7.0)
-    factory_girl (4.9.0)
+    factory_bot (4.8.2)
       activesupport (>= 3.0.0)
+    factory_bot_rails (4.8.2)
+      factory_bot (~> 4.8.2)
+      railties (>= 3.0.0)
     ffi (1.9.23-x64-mingw32)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -175,7 +178,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   coffee-script-source (= 1.8.0)
-  factory_girl
+  factory_bot_rails (~> 4.0)
   haml
   jbuilder (~> 2.5)
   jquery-rails
@@ -191,4 +194,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.13.6
+   1.16.1

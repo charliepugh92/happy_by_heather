@@ -1,0 +1,4 @@
+en:
+  sessions:
+    flashes:
+      invalid_login: Invalid Username or Password

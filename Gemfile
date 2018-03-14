@@ -35,7 +35,7 @@ end
 group :test do
   gem 'shoulda'
   gem 'shoulda-matchers'
-  gem 'factory_girl'
+  gem "factory_bot_rails", "~> 4.0"
 end
 
 group :development do
