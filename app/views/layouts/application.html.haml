@@ -1,11 +1,24 @@
 !!! HTML
 %html
   %head
-    %title HappyByHeather
+    %title= yield(:title)
     = csrf_meta_tags
 
-    = stylesheet_link_tag 'default', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'default', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    = yield
+    %header.navbar.navbar-fixed-top.navbar-inverse
+      .container
+        = link_to 'Happy', '#', id: 'logo'
+        %nav
+          - if @current_user
+            %ul.nav.navbar-nav.navbar-right
+              %li= link_to 'Home', '#'
+              %li= link_to 'Market', '#'
+              %li= link_to 'Log Out', logout_path, method: :delete
+    .container
+      = yield
+    %footer.footer
+      .container
+        &copy; Happy by Heather #{Time.now.year}
