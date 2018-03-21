@@ -1,0 +1,35 @@
+.container
+  .row
+    %h1 Orders
+  .row
+    %h1.title In Progress
+    .container
+      - if @orders['in_progress'].nil?
+        %h4 Not working on a thing. Just Chillin'
+      - else
+        - @orders['in_progress'].each do |order|
+          = render partial: 'order', locals: { order: order } 
+  .row
+    %h1.title Not Started
+    .container
+      - if @orders['not_started'].nil?
+        %h4 Started all orders! Nice hustle!
+      - else
+        - @orders['not_started'].each do |order|
+          = render partial: 'order', locals: { order: order } 
+  .row
+    %h1.title Shipped Orders
+    .container
+      - if @orders['shipped'].nil?
+        %h4 Nothing going out.
+      - else
+        - @orders['shipped'].each do |order|
+          = render partial: 'order', locals: { order: order } 
+  .row
+    %h1.title Completed Orders
+    .container
+      - if @orders['complete'].nil?
+        %h4 We're just getting started.
+      - else
+        - @orders['complete'].each do |order|
+          = render partial: 'order', locals: { order: order } 

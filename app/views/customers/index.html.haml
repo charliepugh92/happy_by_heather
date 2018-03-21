@@ -1,0 +1,13 @@
+.container
+  .row
+    .col-md-3
+      %h1.title Customers
+    .col-md-2.actions
+      = link_to 'New', new_customer_path, class: 'btn btn-primary'
+  .row
+    .container
+      - if @customers.empty?
+        %h4 No Customers yet
+      - else
+        - @customers.each do |customer|
+          = render partial: 'customer', locals: {customer: customer}

@@ -1,0 +1,15 @@
+.col-md-6
+  .container.record
+    .row
+      .col-md-3
+        %h3= order.title
+      .col-md-3.actions
+        = link_to 'View Details', order_path(id: order.id), class: 'btn btn-primary'
+        = link_to 'Edit', edit_order_path(id: order.id), class: 'btn btn-info'
+        = link_to 'Delete', order_path(id: order.id), method: 'delete', class: 'btn btn-danger', data: {confirm: "Are you sure?"}
+    .row
+      .col-md-6
+        Price: #{order.price}
+    .row
+      .col-md-6
+        Remaining Balance: #{order.remaining_balance}

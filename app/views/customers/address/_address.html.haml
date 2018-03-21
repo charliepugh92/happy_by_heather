@@ -1,0 +1,8 @@
+.col-md-6
+  .row
+    #{customer_address.line_one}
+  - if customer_address.line_two
+    .row
+      #{customer_address.line_two}
+  .row
+    #{customer_address.city}, #{customer_address.state} #{customer_address.country ? customer_address.country + ' ' : ''}#{customer_address.zip_code}

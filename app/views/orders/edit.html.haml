@@ -1,0 +1,10 @@
+%h1 Edit Order
+
+- if @order.errors.full_messages.any?
+  .container
+    - @order.errors.full_messages.each do |error|
+      .alert.alert-danger= error
+
+.container
+  = form_for @order, method: 'patch' do |f|
+    = render partial: "form", locals: {f: f}

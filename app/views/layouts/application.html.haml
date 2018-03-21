@@ -10,12 +10,13 @@
   %body
     %header.navbar.navbar-fixed-top.navbar-inverse
       .container
-        = link_to 'Happy', '#', id: 'logo'
+        = link_to 'Happy', root_path, id: 'logo'
         %nav
           - if @current_user
             %ul.nav.navbar-nav.navbar-right
-              %li= link_to 'Home', '#'
-              %li= link_to 'Market', '#'
+              %li= link_to 'Customers', customers_path
+              %li= link_to 'Orders', orders_path
+              %li= link_to 'Market Mode', '#'
               %li= link_to 'Log Out', logout_path, method: :delete
     .container
       - flash.each do |message_type, message|

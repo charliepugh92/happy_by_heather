@@ -1,2 +1,0 @@
-class DeliveryType < ApplicationRecord
-end

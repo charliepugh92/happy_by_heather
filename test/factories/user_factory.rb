@@ -2,15 +2,11 @@ FactoryBot.define do
   require 'bcrypt'
   factory :user do
     transient do
-      password 'password123'
+      password { Faker::Internet.password }
     end
 
-    sequence :username do |n|
-      "User#{n}"
-    end
-    sequence :email do |n|
-      "user_#{n}@example.com"
-    end
+    username { Faker::Internet.user_name }
+    email { Faker::Internet.email }
     
     password_digest { BCrypt::Password.create(password) }
   end

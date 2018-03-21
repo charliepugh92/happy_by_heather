@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   skip_before_action :authenticate!
-  before_action :authenticate!, only: [:destroy]
   before_action :create_params, only: [:create]
 
   def new
