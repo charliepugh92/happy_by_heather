@@ -7,7 +7,7 @@ FactoryBot.define do
 
     username { Faker::Internet.user_name }
     email { Faker::Internet.email }
-    
+
     password_digest { BCrypt::Password.create(password) }
   end
 end

@@ -153,7 +153,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
 
       while_signed_in do
         setup do
-          @params = { order: { price: Faker::Number.decimal(3,2) } }
+          @params = { order: { price: Faker::Number.decimal(3, 2) } }
         end
 
         should 'be success' do

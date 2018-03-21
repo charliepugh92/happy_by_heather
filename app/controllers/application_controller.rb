@@ -16,6 +16,10 @@ class ApplicationController < ActionController::Base
   protected
 
   def login_valid?
-    cookies.signed[:user_id] && @current_user && BCrypt::Password.new(@current_user.remember_digest) == cookies.signed[:remember_token]
+    return false unless cookies.signed[:user_id]
+    return false unless @current_user
+    return false unless BCrypt::Password.new(@current_user.remember_digest) == cookies.signed[:remember_token]
+
+    true
   end
 end

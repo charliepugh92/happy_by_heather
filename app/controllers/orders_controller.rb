@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
     @order = Order.new(request_params)
     @order.customer = @customer
     if @order.save
-      #TODO: change this to order view page, once it's built
+      # TODO: change this to order view page, once it's built
       redirect_to customer_path(id: @order.customer_id)
     else
       render 'new'

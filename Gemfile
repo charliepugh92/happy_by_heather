@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
 
@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'haml'
 
 gem 'jquery-rails'
+gem 'jquery_mask_rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass'
@@ -36,7 +37,7 @@ end
 group :test do
   gem 'shoulda'
   gem 'shoulda-matchers'
-  gem "factory_bot_rails", "~> 4.0"
+  gem 'factory_bot_rails', '~> 4.0'
 end
 
 group :development do

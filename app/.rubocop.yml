@@ -1,0 +1,14 @@
+inherit_from: ../.rubocop.yml
+
+Metrics/BlockLength:
+  Enabled: true
+
+Metrics/LineLength:
+  Enabled: true
+  Max: 110
+
+Metrics/ClassLength:
+  Enabled: true
+
+Metrics/AbcSize:
+  Enabled: false

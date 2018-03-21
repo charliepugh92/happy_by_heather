@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class PaymentTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  context 'validations' do
+    should validate_presence_of(:amount)
+    should validate_presence_of(:order)
+  end
 end

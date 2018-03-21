@@ -8,27 +8,35 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
       end
 
       should 'log in user' do
-        post login_path, params: { session: { username: @user.username, password: 'password_test' } }
+        params = {
+          session: { username: @user.username, password: 'password_test' }
+        }
+
+        post login_path, params: params
 
         assert_redirected_to root_path
       end
 
       should 'not log in and show error if no username is passed' do
-        post login_path, params: { session: { password: 'password_test'}}
+        post login_path, params: { session: { password: 'password_test' } }
 
         assert_response :success
         assert_select '.alert-danger', I18n.t('sessions.flashes.invalid_login')
       end
 
       should 'not log in and show error if no password is passed' do
-        post login_path, params: { session: { username: @user.username}}
+        post login_path, params: { session: { username: @user.username } }
 
         assert_response :success
         assert_select '.alert-danger', I18n.t('sessions.flashes.invalid_login')
       end
 
       should 'not log in and show error if password is not valid' do
-        post login_path, params: { session: { username: @user.username, password: 'badpassword'}}
+        params = {
+          session: { username: @user.username, password: 'bad_password' }
+        }
+
+        post login_path, params: params
 
         assert_response :success
         assert_select '.alert-danger', I18n.t('sessions.flashes.invalid_login')

@@ -119,3 +119,18 @@ h1.title {
 .spacer {
   height: 40px;
 }
+
+/* Form pages */
+
+.row.form-field {
+  padding: 5px;
+  font-size: 16pt;
+}
+
+.row.form-field input {
+  width: 100%;
+}
+
+.row.form-field input.btn {
+  width: inherit;
+}
