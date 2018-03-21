@@ -3,32 +3,33 @@
     .row.form-field
       .col-md-2
         = f.label :line_one, required: true
-      .col-md-8
+      .col-md-5
         = f.text_field :line_one, required: true
     .row.form-field
       .col-md-2
         = f.label :line_two
-      .col-md-8
+      .col-md-5
         = f.text_field :line_two
     .row.form-field
       .col-md-2
         = f.label :city, required: true
-      .col-md-8
+      .col-md-5
         = f.text_field :city, required: true
     .row.form-field
       .col-md-2
         = f.label :state, required: true
-      .col-md-8
+      .col-md-5
         = f.text_field :state, required: true
     .row.form-field
       .col-md-2
         = f.label :country
-      .col-md-8
+      .col-md-5
         = f.text_field :country
     .row.form-field
       .col-md-2
         = f.label :zip_code, required: true
-      .col-md-8
+      .col-md-5
         = f.text_field :zip_code, required: true
     .row.form-field
-      = f.submit class: 'btn btn-primary'
+      .col-md-3
+        = f.submit class: 'btn btn-primary'

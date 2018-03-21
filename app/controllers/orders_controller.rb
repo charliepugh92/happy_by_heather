@@ -36,7 +36,7 @@ class OrdersController < ApplicationController
 
   def destroy
     @order.destroy
-    redirect_to root_path
+    redirect_to customer_path(id: @order.customer_id)
   end
 
   private

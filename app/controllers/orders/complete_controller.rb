@@ -4,7 +4,7 @@ module Orders
 
     def update
       @order.complete!
-      redirect_to order_path(id: @order.id)
+      redirect_to customer_path(id: @order.customer_id)
     end
 
     private

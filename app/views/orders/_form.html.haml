@@ -1,28 +1,30 @@
 .container
-  .row
+  .row.form-field
     .col-md-2
       = f.label :title
-    .col-md-8
+    .col-md-5
       = f.text_field :title
-  .row
+  .row.form-field
     .col-md-2
       = f.label :price
-    .col-md-8
+    .col-md-5
       = f.number_field :price, { step: 'any' }
-  .row
+  .row.form-field
     .col-md-2
       = f.label :delivery_type
-    .col-md-8
-      = f.select :delivery_type, Order.delivery_types.to_a, prompt: true
-  .row
+    .col-md-5
+      = f.enum_select :delivery_type, Order.delivery_types, prompt: true
+  .row.form-field
     .col-md-2
       = f.label :payment_type
-    .col-md-8
-      = f.select :payment_type, Order.payment_types.to_a, prompt: true
-  .row
+    .col-md-5
+      = f.enum_select :payment_type, Order.payment_types, prompt: true
+  .row.form-field
     .col-md-2
       = f.label :order_info
-    .col-md-10
-      = f.text_area :order_info
-  .row
-    = f.submit class: 'btn btn-primary'
+  .row.form-field
+    .col-md-7
+      = f.text_area :order_info, class: 'big'
+  .row.form-field
+    .col-md-3
+      = f.submit class: 'btn btn-primary'

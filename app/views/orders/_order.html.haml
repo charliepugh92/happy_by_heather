@@ -3,13 +3,20 @@
     .row
       .col-md-3
         %h3= order.title
+        .row
+          .col-md-12
+            Price: #{order.price}
+        .row
+          .col-md-12
+            Remaining Balance: #{order.remaining_balance}
       .col-md-3.actions
         = link_to 'View Details', order_path(id: order.id), class: 'btn btn-primary'
         = link_to 'Edit', edit_order_path(id: order.id), class: 'btn btn-info'
         = link_to 'Delete', order_path(id: order.id), method: 'delete', class: 'btn btn-danger', data: {confirm: "Are you sure?"}
-    .row
-      .col-md-6
-        Price: #{order.price}
-    .row
-      .col-md-6
-        Remaining Balance: #{order.remaining_balance}
+        - case order.status
+        - when 'not_started'
+          = link_to 'Start', order_start_path(order_id: order.id), method: 'patch', class: 'btn btn-success'
+        - when 'in_progress'
+          = link_to 'Mark As Shipped', order_ship_path(order_id: order.id), method: 'patch', class: 'btn btn-success'
+        - when 'shipped'
+          = link_to 'Mark As Complete', order_complete_path(order_id: order.id), method: 'patch', class: 'btn btn-success'

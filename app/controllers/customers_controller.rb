@@ -7,6 +7,7 @@ class CustomersController < ApplicationController
 
   def show
     @customer = Customer.includes(:customer_address, :orders).find(params[:id])
+    @customer_orders = @customer.orders.all.group_by(&:status)
   end
 
   def new

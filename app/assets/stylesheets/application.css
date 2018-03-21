@@ -45,16 +45,12 @@ h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
-  text-align: center;
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 2.3em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: #777;
 }
 
 p {
@@ -106,9 +102,12 @@ p {
   margin-top: 22px;
 }
 
-h1.title {
+  .actions a.btn {
+    margin: 2px 2px 4px 2px;
+  }
+
+.title {
   margin-bottom: 10px;
-  text-align: left;
 }
 
 .border-top {
@@ -127,10 +126,20 @@ h1.title {
   font-size: 16pt;
 }
 
+.row.form-field input.btn {
+  font-size: 15pt;
+}
+
 .row.form-field input {
   width: 100%;
 }
 
-.row.form-field input.btn {
-  width: inherit;
+.row.form-field select {
+  padding: 5px;
+  width: 100%;
+}
+
+textarea.big {
+  width: 100%;
+  height: 200px;
 }
