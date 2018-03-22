@@ -16,21 +16,20 @@
             Phone: #{@customer.phone_number}
     .col-md-6
       .container
-        - if @customer.customer_address
-          .row
-            .col-md-4
-              %h1.title Address
-            .col-md-2.actions
+        .row
+          .col-md-3
+            %h1.title
+              Address
+          .col-md-3.actions
+            - if @customer.customer_address
               = link_to 'Edit', edit_customer_address_path(customer_id: @customer.id), class: 'btn btn-info'
               = link_to 'Delete', customer_address_path(customer_id: @customer.id), method: 'delete', class: 'btn btn-danger', data: { confirm: 'Are you sure?' }
+            - else
+              = link_to "Add", new_customer_address_path(customer_id: @customer.id), class: 'btn btn-primary'
+        - if @customer.customer_address
           .row
             .col-md-6
               = render partial: 'customers/address/address', locals: { customer_address: @customer.customer_address }
-        - else
-          .col-md-2
-            %h1.title Address
-          .col-md-6.actions
-            = link_to "Add", new_customer_address_path(customer_id: @customer.id), class: 'btn btn-primary'
   .row.spacer
   .row.border-top
     .col-md-6
