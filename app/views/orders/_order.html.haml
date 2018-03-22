@@ -5,10 +5,10 @@
         %h3= order.title
         .row
           .col-md-12
-            Price: #{order.price}
+            Price: #{ number_to_currency(order.price) }
         .row
           .col-md-12
-            Remaining Balance: #{order.remaining_balance}
+            Remaining Balance: #{ number_to_currency(order.remaining_balance) }
       .col-md-3.actions
         = link_to 'View Details', order_path(id: order.id), class: 'btn btn-primary'
         = link_to 'Edit', edit_order_path(id: order.id), class: 'btn btn-info'

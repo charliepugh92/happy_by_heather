@@ -101,6 +101,10 @@ p {
 
 /* footer */
 
+.container.content {
+  padding-bottom: 150px;
+}
+
 .footer {
   position: fixed;
   left: 0;

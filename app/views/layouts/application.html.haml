@@ -29,7 +29,7 @@
                 = link_to 'Market Mode', '#'
               %li= link_to 'Log Out', logout_path, method: :delete
 
-    .container
+    .container.content
       - flash.each do |message_type, message|
         .alert(class = "alert-#{message_type}")= message
       = yield
