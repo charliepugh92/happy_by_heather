@@ -12,7 +12,7 @@ class CustomerTest < ActiveSupport::TestCase
     should 'destroy orders and address when destroyed' do
       order = create(:order)
       customer = order.customer
-      address = create(:customer_address, customer: customer)
+      create(:customer_address, customer: customer)
 
       assert_difference 'CustomerAddress.count', -1 do
         assert_difference 'Order.count', -1 do
