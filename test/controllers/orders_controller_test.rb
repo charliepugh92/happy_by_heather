@@ -185,7 +185,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
           assert_difference 'Order.count', -1 do
             delete @path
 
-            assert_redirected_to root_path
+            assert_redirected_to customer_path(id: @order.customer_id)
           end
         end
       end

@@ -24,7 +24,7 @@ module Orders
             assert_changes '@order.reload.shipped?', from: false, to: true do
               patch @path
 
-              assert_redirected_to order_path(id: @order.id)
+              assert_redirected_to customer_path(id: @order.customer_id)
             end
           end
         end
