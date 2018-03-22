@@ -40,7 +40,7 @@ GEM
       tzinfo (~> 1.1)
     arel (8.0.0)
     ast (2.4.0)
-    autoprefixer-rails (6.5.2)
+    autoprefixer-rails (8.2.0)
       execjs
     bcrypt (3.1.11-x64-mingw32)
     bindex (0.5.0)
@@ -92,7 +92,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
-    nio4r (2.2.0)
+    nio4r (2.3.0)
     nokogiri (1.8.2-x64-mingw32)
       mini_portile2 (~> 2.3.0)
     parallel (1.12.1)
@@ -129,7 +129,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (2.2.2)
       rake
-    rake (12.3.0)
+    rake (12.3.1)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
@@ -176,7 +176,7 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2018.3)
       tzinfo (>= 1.0.0)
-    uglifier (4.1.7)
+    uglifier (4.1.8)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.3.0)
     web-console (3.5.1)
@@ -208,8 +208,8 @@ DEPENDENCIES
   rails (~> 5.1.5)
   rubocop (~> 0.49.0)
   sass-rails (~> 5.0)
-  shoulda
-  shoulda-matchers
+  shoulda (~> 3.5.0)
+  shoulda-matchers (~> 2.8.0)
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)

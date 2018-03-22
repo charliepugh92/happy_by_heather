@@ -1,4 +1,4 @@
-Style/EndOfLine:
+Layout/EndOfLine:
   Enabled: false
 
 Metrics/BlockLength:

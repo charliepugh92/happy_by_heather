@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :load_customer, only: [:edit, :update, :destroy]
+  before_action :load_customer, only: %i[edit update destroy]
 
   def index
     @customers = Customer.all

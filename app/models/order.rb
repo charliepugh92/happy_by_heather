@@ -4,9 +4,9 @@ class Order < ApplicationRecord
 
   validates :price, :order_info, :title, :payment_type, :delivery_type, :customer, presence: true
 
-  enum status: [:not_started, :in_progress, :shipped, :complete]
-  enum payment_type: [:cash, :paypal]
-  enum delivery_type: [:ship_to_customer, :pick_up]
+  enum status: %i[not_started in_progress shipped complete]
+  enum payment_type: %i[cash paypal]
+  enum delivery_type: %i[ship_to_customer pick_up]
 
   def remaining_balance
     running_total = price

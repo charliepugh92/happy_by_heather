@@ -7,19 +7,19 @@ end
 
 gem 'rails', '~> 5.1.5'
 
+gem 'coffee-rails', '~> 4.2'
+gem 'haml'
 gem 'pg', '>= 1.0.0'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
-gem 'haml'
 
+gem 'bootstrap-sass'
+gem 'coffee-script-source', '1.8.0'
+gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'jquery_mask_rails'
 gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
-gem 'bootstrap-sass'
-gem 'coffee-script-source', '1.8.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -36,9 +36,9 @@ group :development, :test do
 end
 
 group :test do
-  gem 'shoulda'
-  gem 'shoulda-matchers'
   gem 'factory_bot_rails', '~> 4.0'
+  gem 'shoulda', '~> 3.5.0'
+  gem 'shoulda-matchers', '~> 2.8.0'
 end
 
 group :development do
@@ -47,4 +47,4 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

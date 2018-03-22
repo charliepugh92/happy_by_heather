@@ -1,7 +1,7 @@
 module Customers
   class AddressController < ApplicationController
     before_action :load_customer
-    before_action :load_customer_address, only: [:edit, :update, :destroy]
+    before_action :load_customer_address, only: %i[edit update destroy]
 
     def new
       @customer_address = CustomerAddress.new(customer: @customer)

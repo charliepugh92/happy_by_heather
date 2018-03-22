@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :load_order, only: [:show, :edit, :update, :destroy]
-  before_action :load_customer, only: [:new, :create]
+  before_action :load_order, only: %i[show edit update destroy]
+  before_action :load_customer, only: %i[new create]
 
   def index
     @orders = Order.all.group_by(&:status)
