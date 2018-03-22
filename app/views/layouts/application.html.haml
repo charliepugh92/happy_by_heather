@@ -8,16 +8,26 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    %header.navbar.navbar-fixed-top.navbar-inverse
-      .container
-        = link_to 'Happy', root_path, id: 'logo'
-        %nav
+    %nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
           - if @current_user
+            %button.navbar-toggle{ type: 'button', data: { toggle: 'collapse', target: '#my-navbar' } }
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+          = link_to 'Happy', root_path, id: 'logo'
+        - if @current_user
+          .collapse.navbar-collapse#my-navbar
             %ul.nav.navbar-nav.navbar-right
-              %li= link_to 'Customers', customers_path
-              %li= link_to 'Orders', orders_path
-              %li= link_to 'Market Mode', '#'
+              %li{ class: request.path_info.ends_with?('customers') ? 'active' : '' }
+                = link_to 'Customers', customers_path
+              %li{ class: request.path_info.ends_with?('orders') ? 'active' : '' }
+                = link_to 'Orders', orders_path
+              %li{ class: request.path_info.include?('market') ? 'active' : '' }
+                = link_to 'Market Mode', '#'
               %li= link_to 'Log Out', logout_path, method: :delete
+
     .container
       - flash.each do |message_type, message|
         .alert(class = "alert-#{message_type}")= message
