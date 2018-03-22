@@ -12,3 +12,6 @@ Metrics/ClassLength:
 
 Style/Documentation:
   Enabled: false
+
+Link/ScriptPermission:
+  Enabled: false
