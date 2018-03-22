@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
   belongs_to :customer
-  has_many :payments
+  has_many :payments, dependent: :destroy
 
   validates :price, :order_info, :title, :payment_type, :delivery_type, :customer, presence: true
 
