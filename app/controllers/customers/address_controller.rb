@@ -39,11 +39,11 @@ module Customers
     end
 
     def load_customer
-      @customer ||= Customer.includes(:customer_address).find(params[:customer_id])
+      @customer = Customer.includes(:customer_address).find(params[:customer_id])
     end
 
     def load_customer_address
-      @customer_address ||= @customer.customer_address
+      @customer_address = @customer.customer_address
     end
   end
 end

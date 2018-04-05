@@ -1,0 +1,13 @@
+.col-md-6
+  .container.record
+    .row
+      .col-md-3
+        .row
+          .col-md-12
+            Amount: #{ number_to_currency(payment.amount) }
+        .row
+          .col-md-12
+            Confirmation Number: #{ payment.confirmation_number }
+      .col-md-3.actions
+        = link_to 'Edit', edit_payment_path(id: payment.id), class: 'btn btn-info'
+        = link_to 'Delete', payment_path(id: payment.id), method: 'delete', class: 'btn btn-danger', data: {confirm: "Are you sure?"}

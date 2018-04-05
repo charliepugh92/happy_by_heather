@@ -13,5 +13,8 @@ Metrics/ClassLength:
 Style/Documentation:
   Enabled: false
 
-Link/ScriptPermission:
+Lint/ScriptPermission:
+  Enabled: false
+
+Style/ExpandPathArguments:
   Enabled: false

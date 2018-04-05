@@ -10,7 +10,7 @@ module Orders
     private
 
     def load_order
-      @order ||= Order.find(params[:order_id])
+      @order = Order.find(params[:order_id])
     end
   end
 end

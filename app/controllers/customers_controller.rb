@@ -42,7 +42,7 @@ class CustomersController < ApplicationController
   private
 
   def load_customer
-    @customer ||= Customer.find(params[:id])
+    @customer = Customer.find(params[:id])
   end
 
   def request_params

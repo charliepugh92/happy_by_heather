@@ -42,11 +42,11 @@ class OrdersController < ApplicationController
   private
 
   def load_order
-    @order ||= Order.find(params[:id])
+    @order = Order.find(params[:id])
   end
 
   def load_customer
-    @customer ||= Customer.find(params[:customer_id])
+    @customer = Customer.find(params[:customer_id])
   end
 
   def request_params

@@ -8,11 +8,15 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
 
   resources :orders, except: %i[new create] do
+    resources :payments, controller: 'payments', only: %i[new create]
     resource :start, controller: 'orders/start', only: %i[update]
     resource :ship, controller: 'orders/ship', only: %i[update]
     resource :complete, controller: 'orders/complete', only: %i[update]
     resource :reset_status, controller: 'orders/reset_status', only: %i[update]
   end
+
+  resources :payments, only: %i[edit update destroy]
+
   resources :customers do
     resources :orders, only: %i[new create]
     resource :address, except: %i[show], controller: 'customers/address'

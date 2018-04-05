@@ -2,8 +2,9 @@ default: &default
   adapter: postgresql
   encoding: unicode
   database: happy_by_heather
-  username: rails
-  password: rails_local_pass
+  username: postgres
+  password: password
+  host: localhost
 
 development:
   <<: *default

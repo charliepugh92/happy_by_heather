@@ -1,0 +1,14 @@
+.container
+  .row.form-field
+    .col-md-2
+      = f.label :amount
+    .col-md-5
+      = f.number_field :amount, { step: 'any' }
+  .row.form-field
+    .col-md-2
+      = f.label :confirmation_number
+    .col-md-5
+      = f.text_field :confirmation_number
+  .row.form-field
+    .col-md-3
+      = f.submit class: 'btn btn-primary'

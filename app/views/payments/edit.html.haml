@@ -1,0 +1,10 @@
+%h1 Edit Payment
+
+- if @payment.errors.full_messages.any?
+  .container
+    - @payment.errors.full_messages.each do |error|
+      .alert.alert-danger= error
+
+.container
+  = form_for @payment, method: 'patch' do |f|
+    = render partial: "form", locals: {f: f}

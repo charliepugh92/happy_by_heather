@@ -32,7 +32,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'faker'
-  gem 'rubocop', '~> 0.49.0'
+  gem 'rubocop', '~> 0.54.0'
 end
 
 group :test do
