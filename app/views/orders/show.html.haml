@@ -1,0 +1,44 @@
+= link_to 'Back to Customer', customer_path(id: @order.customer_id), class: 'btn btn-warning'
+.container
+  .row
+    .col-md-6
+      .container
+        .row
+          .col-md-4
+            %h1.title #{@order.title}
+          .col-md-2.actions
+            = link_to 'Edit', edit_order_path(id: @order.id), class: 'btn btn-info'
+            = link_to 'Delete', order_path(id: @order.id), method: 'delete', class: 'btn btn-danger', data: { confirm: 'Are you sure?' }
+        .row
+          .col-md-6
+            Price: #{number_to_currency(@order.price)}
+        .row
+          .col-md-6
+            Remaining Balance: #{number_to_currency(@order.remaining_balance)}
+        .spacer
+        .row
+          .col-md-6
+            Payment Type: #{@order.payment_type.titleize}
+        .row
+          .col-md-6
+            Delivery Type: #{@order.delivery_type.titleize}
+        .spacer
+        .row
+          .col-md-12
+            %h1.title Details
+        .row
+          .col-md-12.word-wrap= @order.order_info
+    .col-md-6
+      .container
+        .row
+          .col-md-3
+            %h1.title
+              Payments
+          .col-md-3.actions
+            = link_to 'Add Payment', new_order_payment_path(order_id: @order.id), class: 'btn btn-info'
+        - if @order.payments.count > 0
+          - @order.payments.each do |payment|
+            .row
+              = render partial: 'payments/payment', locals: { payment: payment }
+        - else
+          No payments on this order yet.

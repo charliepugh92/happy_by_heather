@@ -53,6 +53,10 @@ p {
   line-height: 1.7em;
 }
 
+.word-wrap {
+  word-wrap: break-word;
+}
+
 /* header */
 
 .navbar {
