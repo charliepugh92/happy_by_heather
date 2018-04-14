@@ -18,7 +18,13 @@ class ApplicationController < ActionController::Base
   def login_valid?
     return false unless cookies.signed[:user_id]
     return false unless @current_user
-    return false unless BCrypt::Password.new(@current_user.remember_digest) == cookies.signed[:remember_token]
+    return false unless cookies.signed[:remember_token]
+
+    token = JSON.parse(cookies.signed[:remember_token])
+    db_token = RememberToken.find(token['token_id'])
+
+    return false unless @current_user.id == db_token.user_id
+    return false unless BCrypt::Password.new(db_token.remember_digest) == token['token']
 
     true
   end
