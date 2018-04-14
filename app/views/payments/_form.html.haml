@@ -6,6 +6,11 @@
       = f.number_field :amount, { step: 'any' }
   .row.form-field
     .col-md-2
+      = f.label :payment_type
+    .col-md-5
+      = f.enum_select :payment_type, Payment.payment_types, prompt: true
+  .row.form-field
+    .col-md-2
       = f.label :confirmation_number
     .col-md-5
       = f.text_field :confirmation_number

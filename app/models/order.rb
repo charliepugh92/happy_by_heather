@@ -2,10 +2,9 @@ class Order < ApplicationRecord
   belongs_to :customer
   has_many :payments, dependent: :destroy
 
-  validates :price, :order_info, :title, :payment_type, :delivery_type, :customer, presence: true
+  validates :price, :order_info, :title, :delivery_type, :customer, presence: true
 
   enum status: %i[not_started in_progress shipped complete]
-  enum payment_type: %i[cash paypal]
   enum delivery_type: %i[ship_to_customer pick_up]
 
   def remaining_balance
@@ -17,6 +16,6 @@ class Order < ApplicationRecord
   private
 
   def send_confirmation_email
-    # OrderMailer.confirmation(id).send_later
+    # TODO: OrderMailer.confirmation(id).send_later
   end
 end

@@ -16,8 +16,7 @@ class OrdersController < ApplicationController
     @order = Order.new(request_params)
     @order.customer = @customer
     if @order.save
-      # TODO: change this to order view page, once it's built
-      redirect_to customer_path(id: @order.customer_id)
+      redirect_to order_path(id: @order.id)
     else
       render 'new'
     end
@@ -53,7 +52,6 @@ class OrdersController < ApplicationController
     new_params = params.require(:order).permit(:order_info, :title, :price, :payment_type, :delivery_type)
 
     new_params['delivery_type'] = new_params['delivery_type'].to_i if new_params['delivery_type']
-    new_params['payment_type'] = new_params['payment_type'].to_i if new_params['payment_type']
 
     new_params
   end

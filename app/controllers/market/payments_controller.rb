@@ -29,7 +29,11 @@ module Market
     end
 
     def request_params
-      params.require(:payment).permit(:amount, :confirmation_number)
+      new_params = params.require(:payment).permit(:amount, :confirmation_number, :payment_type)
+
+      new_params['payment_type'] = new_params['payment_type'].to_i if new_params['payment_type']
+
+      new_params
     end
   end
 end

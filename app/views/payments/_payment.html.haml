@@ -7,6 +7,9 @@
             Amount: #{ number_to_currency(payment.amount) }
         .row
           .col-md-12
+            Payment Type: #{ payment.payment_type.titleize }
+        .row
+          .col-md-12
             Confirmation Number: #{ payment.confirmation_number }
       .col-md-3
         = link_to 'Edit', edit_payment_path(id: payment.id), class: 'btn btn-info'
