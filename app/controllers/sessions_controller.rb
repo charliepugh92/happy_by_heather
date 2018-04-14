@@ -9,9 +9,9 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(username: params[:session][:username])
     if user && user.authenticate(params[:session][:password])
-      user.remember
+      token = user.remember
+      cookies.permanent.signed[:remember_token] = token.to_json
       cookies.permanent.signed[:user_id] = user.id
-      cookies.permanent.signed[:remember_token] = user.remember_token
 
       redirect_to root_path
     else
@@ -21,8 +21,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    RememberToken.find(JSON.parse(cookies.signed[:remember_token])['token_id']).destroy
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
+
     redirect_to login_path
   end
 
