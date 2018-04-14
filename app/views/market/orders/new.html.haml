@@ -1,0 +1,14 @@
+#start.center.collapse.in
+  %span{ type: 'button', data: { toggle: 'collapse', target: '#order-page,#start' } }
+    %h3 Please hand the device back
+#order-page.collapse
+  %h1 New Order
+
+  - if @order.errors.full_messages.any?
+    .container
+      - @order.errors.full_messages.each do |error|
+        .alert.alert-danger= error
+
+  .container
+    = form_for @order, url: market_customer_orders_path(customer_id: @customer.id) do |f|
+      = render partial: "orders/form", locals: {f: f}

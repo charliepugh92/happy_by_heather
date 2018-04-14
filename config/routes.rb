@@ -21,4 +21,14 @@ Rails.application.routes.draw do
     resources :orders, only: %i[new create]
     resource :address, except: %i[show], controller: 'customers/address'
   end
+
+  namespace :market do
+    resources :customers, only: %i[new create] do
+      resource :address, only: %i[new create], controller: 'customers/address'
+      resources :orders, only: %i[new create]
+    end
+    resources :orders, only: %i[show] do
+      resources :payments, only: %i[new create]
+    end
+  end
 end

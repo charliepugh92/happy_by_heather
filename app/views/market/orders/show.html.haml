@@ -1,0 +1,36 @@
+.container
+  .row
+    .col-md-6
+      .container
+        .row
+          %h3.title Customer Information
+        .row
+          Name: #{@order.customer.first_name} #{@order.customer.last_name}
+        .row
+          Email: #{@order.customer.email}
+        .row
+          Phone Number: #{@order.customer.phone_number}
+  - if @order.ship_to_customer?
+    .row
+      .col-md-6
+        .container
+          .row
+            %h3.title Shipping Address
+        = render partial: 'customers/address/address', locals: {customer_address: @order.customer.customer_address}
+  .row
+    .col-md-6
+      .container
+        .row
+          %h3.title Order Information
+        .row
+          %h4 #{@order.title}
+        .row
+          Details:
+        .row.word_wrap.spacer
+          #{@order.order_info}
+        .row
+          Delivery Method: #{@order.delivery_type.titleize}
+        .row.spacer
+          Price: #{number_to_currency(@order.price)}
+  .row.form-field
+    = link_to 'Confirm', new_market_order_payment_path(order_id: @order.id), class: 'btn btn-primary'

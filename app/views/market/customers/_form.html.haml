@@ -1,0 +1,25 @@
+= form_for(customer, url: market_customers_path) do |f|
+  .container
+    .row.form-field
+      .col-md-2
+        = f.label :first_name
+      .col-md-5
+        = f.text_field :first_name
+    .row.form-field
+      .col-md-2
+        = f.label :last_name
+      .col-md-5
+        = f.text_field :last_name
+    .row.form-field
+      .col-md-2
+        = f.label :email
+      .col-md-5
+        = f.text_field :email
+    .row.form-field
+      .col-md-2
+        = f.label :phone_number
+      .col-md-5
+        = f.text_field :phone_number
+    .row.form-field
+      .col-md-3
+        = f.submit class: 'btn btn-primary'

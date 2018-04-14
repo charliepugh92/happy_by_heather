@@ -157,11 +157,11 @@ p {
   font-size: 16pt;
 }
 
-.row.form-field input.btn {
+.row.form-field .btn {
   font-size: 15pt;
 }
 
-.row.form-field input, .row.form-field select, .row.form-field textarea {
+.row.form-field input, .row.form-field select, .row.form-field textarea, .row.form-field a.btn {
   width: 100%;
   border-radius: 4px;
   padding: 1px 4px 1px 4px;
