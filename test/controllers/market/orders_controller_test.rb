@@ -82,7 +82,6 @@ module Market
               assert_equal @customer.id, order.customer_id
               assert_equal @params[:order][:order_info], order.order_info
               assert_equal @params[:order][:price], order.price.to_s
-              assert order.paypal?
               assert order.ship_to_customer?
               assert order.not_started?
 
@@ -104,7 +103,6 @@ module Market
               assert_equal @customer.id, order.customer_id
               assert_equal @params[:order][:order_info], order.order_info
               assert_equal @params[:order][:price], order.price.to_s
-              assert order.paypal?
               assert order.pick_up?
               assert order.not_started?
 

@@ -57,6 +57,7 @@ module Market
             assert_equal @order, payment.order
             assert_equal @params[:payment][:amount], payment.amount.to_s
             assert_equal @params[:payment][:confirmation_number], payment.confirmation_number
+            assert payment.paypal?
 
             # TODO: check mailer gets called
 

@@ -34,10 +34,9 @@ module Market
     end
 
     def request_params
-      new_params = params.require(:order).permit(:order_info, :title, :price, :payment_type, :delivery_type)
+      new_params = params.require(:order).permit(:order_info, :title, :price, :delivery_type)
 
       new_params['delivery_type'] = new_params['delivery_type'].to_i
-      new_params['payment_type'] = new_params['payment_type'].to_i
 
       new_params
     end

@@ -6,5 +6,5 @@
       .alert.alert-danger= error
 
 .container
-  = form_for @payment, url: market_order_payments_path(order_id: @order.id) do |f|
+  = form_for @payment, url: order_payments_path(order_id: @order.id) do |f|
     = render partial: "payments/form", locals: {f: f}

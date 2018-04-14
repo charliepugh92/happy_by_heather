@@ -7,8 +7,8 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    @payment = Payment.new(request_params)
-    @payment.order = @order
+    @payment = @order.payments.new(request_params)
+
     if @payment.save
       redirect_to order_path(id: @order.id)
     else
@@ -42,6 +42,10 @@ class PaymentsController < ApplicationController
   end
 
   def request_params
-    params.require(:payment).permit(:amount, :confirmation_number)
+    new_params = params.require(:payment).permit(:amount, :confirmation_number, :payment_type)
+
+    new_params['payment_type'] = new_params['payment_type'].to_i if new_params['payment_type']
+
+    new_params
   end
 end
