@@ -21,7 +21,7 @@ module Market
     private
 
     def send_confirmation_email(order)
-      # TODO
+      CustomerNotifierMailer.delay.market_order_confirmation(order.id)
     end
 
     def load_order
